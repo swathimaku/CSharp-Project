@@ -1,0 +1,10 @@
+pipeline{
+agent any
+triggers {
+        pollSCM '* * * * *'
+    }
+stage('build'){
+steps{
+echo 'build swathi............'
+}
+}

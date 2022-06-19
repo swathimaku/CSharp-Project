@@ -1,0 +1,17 @@
+pipeline{
+agent {label 'nodename'}
+triggers {
+        pollSCM '* * * * *'
+    }
+stage('scm'){
+steps{
+git branch: 'main', url: 'https://github.com/swathimaku/CSharp-Project.git'
+}
+}
+
+stage('Sampleproject'){
+steps{
+sh 'mvn pACKAGE'
+}
+}
+}

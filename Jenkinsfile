@@ -3,7 +3,8 @@ agent {label 'nodename'}
 triggers {
         pollSCM '* * * * *'
     }
-stage('scm'){
+stages {
+        stage('scm'){
 steps{
 git branch: 'main', url: 'https://github.com/swathimaku/CSharp-Project.git'
 }
@@ -14,4 +15,6 @@ steps{
 sh 'mvn pACKAGE'
 }
 }
+    }
+
 }
